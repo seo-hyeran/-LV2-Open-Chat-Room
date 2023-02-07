@@ -4,10 +4,6 @@
 #include <string>
 #include <vector>
 #include<algorithm>
-#include<iostream>
-#include<queue>
-#include<tuple>
-#include<regex>
 #include <map>
 #include<sstream>
 
@@ -16,17 +12,17 @@ using namespace std;
 vector<string> solution(vector<string> record) {
     vector<string> answer;
     vector<string> tmp;
-    map<string, string> m;
+    map<string, string> m; //key(uid)와 value(name)분리를 위해 map 함수 이용 
     for (int i = 0; i < record.size(); i++) {
         vector<string> str;
-        string token;
+        string word;
         
-        stringstream ss(record[i]);
+        stringstream ss(record[i]); //문자열 분류
 
 
 
-        while (getline(ss,token,' ')) {
-            str.push_back(token);
+        while (getline(ss,word,' ')) { //공백(' ') 분리
+            str.push_back(word); //각 문자 배열에 저장
             
         }
 
